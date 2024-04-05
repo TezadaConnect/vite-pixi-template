@@ -8,6 +8,8 @@ export class MainSceneController extends Application{
 
     public async ready (): Promise<void> {
         console.log("Initializing");
+        await this.init({ background: "#7371fc", resizeTo: window});
+        document.body.appendChild(this.canvas);
         await this.addHappyImage();
     }
 
