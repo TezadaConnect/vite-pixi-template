@@ -4,7 +4,10 @@ export class MainSceneController extends Application{
  
     private _image: Sprite | null = null;
 
-    constructor () { super() };
+    constructor () { 
+        super();
+        this.ready();
+    };
 
     public async ready (): Promise<void> {
         console.log("Initializing");
