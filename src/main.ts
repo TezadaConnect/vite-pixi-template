@@ -1,10 +1,16 @@
+import { Application } from 'pixi.js';
 import './css/main.css';
-import { MainSceneController } from './controllers/main_scene_controller';
-import { Ticker } from 'pixi.js';
+import { RouteManager } from './manager/route_manager';
 
-const startGame = async () => {
-  const controller: MainSceneController = new MainSceneController();
-  Ticker.shared.add(controller.process.bind(controller));
-}
+export const app = new Application();
 
-startGame();
+await app.init({ background: "#000000", resizeTo: window});
+
+document.body.appendChild(app.canvas);
+
+export const router = new RouteManager();
+
+router.startGame();
+
+
+
